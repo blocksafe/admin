@@ -42,10 +42,10 @@ jobs:
           name: Deploy docker container to correct server for each environment
           command: |
             if [ $CIRCLE_BRANCH = 'staging' ]; then
-            ssh -o StrictHostKeyChecking=no ${STAGING_SSH_USER}@${STAGING_IP} "/bin/bash ~/deploy/docker-core.sh $DOCKER_ORG/$IMAGE_NAME:$TAG $IMAGE_NAME $DOCKER_LOGIN $DOCKER_PWD"
+            ssh -o StrictHostKeyChecking=no ${STAGING_SSH_USER}@${STAGING_IP} "/bin/bash ~/deploy/docker-admin.sh $DOCKER_ORG/$IMAGE_NAME:$TAG $IMAGE_NAME $DOCKER_LOGIN $DOCKER_PWD"
             fi
             if [ $CIRCLE_BRANCH = 'production' ]; then
-            ssh -o StrictHostKeyChecking=no ${PRODUCTION_SSH_USER}@${PRODUCTION_IP} "/bin/bash ~/deploy/docker-core.sh $DOCKER_ORG/$IMAGE_NAME:$TAG $IMAGE_NAME $DOCKER_LOGIN $DOCKER_PWD"
+            ssh -o StrictHostKeyChecking=no ${PRODUCTION_SSH_USER}@${PRODUCTION_IP} "/bin/bash ~/deploy/docker-admin.sh $DOCKER_ORG/$IMAGE_NAME:$TAG $IMAGE_NAME $DOCKER_LOGIN $DOCKER_PWD"
             fi
 
 
