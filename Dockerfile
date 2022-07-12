@@ -5,7 +5,8 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Running npm install for production mode (bundling and minification)
-RUN npm ci --only=production
+# RUN npm ci --only=production
+RUN npm install --production
 
 COPY . .
 
