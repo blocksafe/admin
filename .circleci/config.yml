@@ -8,7 +8,8 @@ jobs:
       - checkout
       - run: npm install
       - run: node -v
-      - run: npm test 
+      - run: npm run build
+      - run: npm run start
       - run: 
           name: Setup Variables -  Setting tags and image name and exporting to bash_env (Creating Tags)
           command: |
