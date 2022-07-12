@@ -12,5 +12,5 @@ COPY . .
 # For the core api we need to run the build script on port 4000 
 EXPOSE 4300
 
-CMD [ "npm", "build"]
+# CMD [ "npm", "build"]
 CMD [ "npm", "start"]
